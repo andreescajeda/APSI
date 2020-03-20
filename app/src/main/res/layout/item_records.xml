@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="record"
+            type="com.andreescajedarios.apsi.history.RecordsViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_records_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/item_records_number_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_records_id_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/item_records_number_textView"
+                android:text="Lorem ipsum dolor sit amet."
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_records_product_display_name_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="144dp"
+                android:layout_below="@id/item_records_id_textView"
+                android:layout_alignStart="@id/item_records_id_textView"
+                android:text="@{record.productDisplayName}"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/item_records_list_price_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_records_product_display_name_textView"
+                android:layout_alignStart="@id/item_records_id_textView"
+                android:text="@{record.listPrice.toString()}"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/item_records_imageView"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
